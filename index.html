@@ -73,8 +73,38 @@
   </div>
 </div>
 <script src="https://unpkg.com/jquery"></script>
+
 <script>
   // Add your code here!
+  $('article img').addClass('image-center');
+  $('article :nth-child(7)').remove();
+  let newFontSize = Math.floor((Math.random() * 100));
+  $('#title').css('font-size', newFontSize); // why does template literal not work? 
+  $('.col-sm-4 ol').append('<li> Blah Blah');
+  $('aside').empty().append('<p> I am so sorry about the list');
+  
+  
+  $('body').css('background-color', `rgb(red, blue, green)`)
+  const input = $('div input').val()
+  
+  const experiment = $('row mb-5 :nth-child(1)');
+
+  const inputs = $('input');
+
+
+  // for (let input of inputs) {
+  //   $('input').on('input', function (evt) {
+  //       $(evt.target).
+  //   })
+  // }
+  
+
+//   for (let input of ["one", "two", "three", "four"]) {
+//   $(`#${id} button`).on("click", function (evt) {
+//     $(`#${id} ul`).append(`<li>new ${newNum++}</li>`);
+//   });
+// }
+
 </script>
 </body>
 

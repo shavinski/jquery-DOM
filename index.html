@@ -73,20 +73,25 @@
     <script src="https://unpkg.com/jquery"></script>
 
     <script>
+      'use strict';
       // Add your code here!
       $('article img').addClass('image-center');
       $('article :nth-child(7)').remove();
-      let newFontSize = Math.floor((Math.random() * 100));
-      $('#title').css('font-size', newFontSize); // why does template literal not work?
-      $('.col-sm-4 ol').append('<li> Blah Blah');
-      $('aside').empty().append('<p> I am so sorry about the list');
 
-      const inputs = $('input');
-  
-      $(inputs).change(function () {
-        const red = inputs[0].value;
-        const blue = inputs[1].value;
-        const green = inputs[2].value;
+      let newFontSize = Math.ceil((Math.random() * 100));
+
+      $('#title').css('font-size', `${newFontSize}px`); // why does template literal not work? boom
+      $('ol').append('<li> Blah Blah'); // TODO: add closing tag
+      $('ol').append($('<li>', {text: 'blobbity blah'}));
+
+      $('aside').empty().append($('<p>', {text: 'I am so sorry about the list.'}));
+//
+      // const inputs = $('input');
+
+      $('input').change(function () {
+        const red =   $('.form-control').eq(0).val();
+        const blue = $('.form-control').eq(1).val();
+        const green = $('.form-control').eq(2).val();
         $('body').css('background-color', `rgb(${red},${blue},${green}`);
       });
 
@@ -101,13 +106,15 @@
       })
 
 
+// TODO: LAST FREAKING CHILD;
+
       // for (let color of [red, blue, green]) {
       //   $(color).on('input', function (evt) {
 
       //   })
       // }
 
-     
+
     </script>
   </body>
 

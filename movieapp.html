@@ -7,21 +7,34 @@
     <title>Movie</title>
 
     <style>
+        #movie-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
     </style>
 </head>
 <body>
     <section class="form">
-        <form action="">
-            <label for="title">Title of Movie</label>
-            <input type="text" name="title" id="title" value = "">
-            <label for="title">Rating</label>
-            <input type="text" min="1" max="5" name="title" id="title" placeholder="Score between 1 to 5 stars">
-            <button type="submit">Submit</button>
+        <form id="movie-form">
+            <div class="title-cont">
+                <label for="title">Title of Movie</label>
+                <input type="text" name="title" id="title" value = "">
+            </div>
+            <div class="rating-cont">
+                <label for="rating">Rating</label>
+                <input type="number" name="rating" id="rating" placeholder="1 to 5 stars">
+            </div>
+            <div class="button-cont">
+                <input type="submit" id="submit-btn"></input>
+            </div>
         </form>
 
         <div class="movie-container">
+            <ol class="movie-list">
 
+            </ol>
         </div>
 
     </section>
@@ -30,15 +43,18 @@
 
     <script>
     
-    const 
-    const span = $('<span>')
-    
+    $('#movie-form').submit(function(event) {
+        event.preventDefault();
+        alert('Thanks for submitting your favorite movie!');
+        const favMovie = $('#title').val();
+        const rating = $('#rating').val();
+        
+        $('.movie-list').append($('<li>', {text: `My favorite movie is ${favMovie} and I give it ${rating} stars.`}));
+        
+        
+    });
 
-//         for (let id of ["one", "two", "three", "four"]) {
-//   $(`#${id} button`).on("click", function (evt) {
-//     $(`#${id} ul`).append(`<li>new ${newNum++}</li>`);
-//   });
-// }
+    
 
     </script>
 </body>

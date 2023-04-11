@@ -76,20 +76,19 @@
       'use strict';
       // Add your code here!
       $('article img').addClass('image-center');
-      $('article :nth-child(7)').remove();
+      $('article :last-child').remove();
 
       let newFontSize = Math.ceil((Math.random() * 100));
-
       $('#title').css('font-size', `${newFontSize}px`); // why does template literal not work? boom
-      $('ol').append('<li> Blah Blah'); // TODO: add closing tag
-      $('ol').append($('<li>', {text: 'blobbity blah'}));
 
+      // $('ol').append('<li> Blah Blah'); // TODO: add closing tag
+      $('ol').append($('<li>', {text: 'blobbity blah'}));
       $('aside').empty().append($('<p>', {text: 'I am so sorry about the list.'}));
 //
       // const inputs = $('input');
 
       $('input').change(function () {
-        const red =   $('.form-control').eq(0).val();
+        const red = $('.form-control').eq(0).val();
         const blue = $('.form-control').eq(1).val();
         const green = $('.form-control').eq(2).val();
         $('body').css('background-color', `rgb(${red},${blue},${green}`);

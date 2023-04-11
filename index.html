@@ -82,15 +82,23 @@
       $('aside').empty().append('<p> I am so sorry about the list');
 
       const inputs = $('input');
-      const red = inputs[ 0 ].value;
-      const blue = inputs[ 1 ].value;
-      const green = inputs[ 2 ].value;
-
-
-      $(inputs).change(function ()
-      {
+  
+      $(inputs).change(function () {
+        const red = inputs[0].value;
+        const blue = inputs[1].value;
+        const green = inputs[2].value;
         $('body').css('background-color', `rgb(${red},${blue},${green}`);
       });
+
+      // WORKS HERE
+      $('.image-center').on('click', function (evt) {
+        $(evt.target).remove();
+      })
+
+      //WORKS HERE
+      $('img').on('click', function (evt) {
+        $(evt.target).remove();
+      })
 
 
       // for (let color of [red, blue, green]) {
@@ -99,45 +107,7 @@
       //   })
       // }
 
-      // $('body').css('background-color', `rgb(${red},${blue},${green}`);
-      // const input = $('div input').val();
-
-      // const experiment = $('row mb-5 :nth-child(1)');
-
-
-<<<<<<< HEAD
-=======
-<script>
-  // Add your code here!
-  $('article img').addClass('image-center');
-  $('article :nth-child(7)').remove();
-  let newFontSize = Math.floor((Math.random() * 100));
-  $('#title').css('font-size', newFontSize); // why does template literal not work? 
-  $('.col-sm-4 ol').append('<li> Blah Blah');
-  $('aside').empty().append('<p> I am so sorry about the list');
-  
-  
-  $('body').css('background-color', `rgb(red, blue, green)`)
-  const input = $('div input').val()
-  
-  const experiment = $('row mb-5 :nth-child');
->>>>>>> d09072cd92e77bec796fdfcdf0d7fac329b2415b
-
-
-
-  // for (let input of inputs) {
-  //   $('input').on('input', function (evt) {
-  //       $(evt.target).
-  //   })
-  // }
-
-
-//   for (let input of ["one", "two", "three", "four"]) {
-//   $(`#${id} button`).on("click", function (evt) {
-//     $(`#${id} ul`).append(`<li>new ${newNum++}</li>`);
-//   });
-// }
-
+     
     </script>
   </body>
 
